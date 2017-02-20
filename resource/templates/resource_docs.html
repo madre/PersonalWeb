@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+<!--
+	Strongly Typed 1.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+{% block head_title %}程序库{% endblock head_title %}
+{% block body %}
+		<!-- Features Wrapper -->
+			<div id="features-wrapper">
+
+				<!-- Features -->
+					<section id="features" class="container">
+						<header>
+							<h2>聚沙之<strong>塔</strong>——文档扎记集合</h2>
+						</header>
+
+						<div class="row">
+                            <!--<small>(<a href="{% url 'resource_list' %}">更多</a>)</small>-->
+                                {% for resource in resource_list %}
+                                    <div class="4u">
+
+                                        <!-- Feature -->
+                                            <section>
+                                                <a href="{{ resource.url }}" class="image image-full">
+                                                    <img src="{{ resource.help_text }}">
+                                                </a>
+                                                <header>
+                                                    <h3><a href="{{ resource.url }}">{{ resource.title }}</a></a></h3>
+                                                </header>
+                                                <p>
+                                                    {{ resource.description|safe }}
+                                                </p>
+                                            </section>
+
+                                    </div>
+                                {% endfor %}
+						</div>
+					</section>
+
+			</div>
+{% endblock body %}
