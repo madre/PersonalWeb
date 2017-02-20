@@ -146,7 +146,7 @@ try:
 except ImportError:
     pass
 
-# try:
-#     from .local_conf import *
-# except ImportError:
-#     pass
+try:
+    from .local_conf import *
+except ImportError:
+    pass
