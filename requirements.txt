@@ -4,3 +4,11 @@ django-grappelli
 
 # third
 Pillow
+
+# database
+redis
+mysqlclient
+
+# deployment
+aiohttp
+gunicorn
